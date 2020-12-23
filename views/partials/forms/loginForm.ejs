@@ -1,17 +1,23 @@
-<form action="submit">
-    <label for="eid">
-        Name
-    </label>
-    <input type="text" required id="eid" name="eid">
-    <label for="passwd">
-        Password
-    </label>
-    <input type="password" required id="passwd" name="password">
-
-    <!-- add when applicable -->
-    <!-- <a href="/forgotPassword">Forgot Password</a> -->
-    
-    <button class="btn" type="submit">
+<form>
+    <h2 class="heading">
         Login
+    </h2>
+    <div class="formElement" id="nameElement">
+        <input type="text" id="id" name="id" autocomplete="off" required>
+        <label for="id" class="label-name">
+            <span class="content-name">
+                Id
+            </span>
+        </label>
+    </div>
+    <div class="formElement" id="nameElement">
+        <input type="password" id="passwd" name="passwd" autocomplete="off" required>
+        <label for="passwd" class="label-name">
+            <span class="content-name">
+                Password
+            </span>
+        </label>
+    </div>
+    <button class="btn submit-button" type="submit">Submit
     </button>
 </form>

@@ -1,3 +1,23 @@
+:root {
+    --main: #F2ECFF;
+    --accent: #1e1e1e;
+    --hover: #bbbbbb;
+    --focus-form: #518071;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--main);
+}
+
+
 /* reset */
 * {
     margin: 0;
@@ -5,28 +25,51 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
     width: 100%;
     height: 100vh;
 }
 
+/* heading style start*/
 header {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 15%;
-    background-color: #1e1e1e;
+    background-color:var(--accent);
     
     display: flex;
     justify-content: space-around;
     align-items: center;    
 }
 
+header > .logo {
+    margin-right: 15em;
+}
+
+header > .navbar {
+    flex-basis: 35%;
+}
+
+header > .navbar > .navbar-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
+    color: var(--main)
+}
+
+header #loginBtn {
+    
+    background-color: var(--main);
+    color: var(--accent)
+}
+
+        
+    
+/* header style end */
 .loginContainer {
     margin-top: 5em;
 
@@ -72,9 +115,106 @@ done just to make it look good */
 
     padding: .5em;
     border-radius: .5em;
-    color: #eeeeee;
+    color: var(--main   );
 
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 
-    background-color: #1e1e1e;
+    background-color: var(--accent);
+}
+
+/* form styling */
+form{
+    margin: auto;
+    margin-top: 5%;
+	padding: 1.5em;
+	width: 40%;
+    background-color:var(--main);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formElement{
+	width: 90%;
+	position: relative;
+	height: 50px;
+	margin: 2em auto;
+	overflow: hidden;
+
+}
+
+.formElement input{
+	width: 100%;
+	height: 100%;
+	color: var(--accent);
+	padding-top: 20px;
+	outline: none;
+	border: none;
+	background: var(--main);
+	border-radius:.5em;
+}
+
+
+.formElement label{
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 1px solid black;
+}
+
+.formElement label::after{
+	content: "";
+	position: absolute;
+	left: 0px;
+	bottom: -1px;
+	height: 100%;
+	width: 100%;
+	border-bottom: 3px solid var(--focus-form);
+	transform: translateX(-100%);
+	transition: all 0.3s ease;
+}
+
+.content-name{ 
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.formElement input:focus + 
+.label-name .content-name,		/*pushes label name up when on focus*/
+.formElement input:valid + 			/*keeps label there when has content*/
+.label-name .content-name {
+	transform: translateY(-150%);
+	font-size: 14px;
+	color: var(--focus-form);
+}
+
+.formElement input:focus + .label-name::after,
+.formElement input:valid + .label-name::after{
+	transform: translateX(0%);
+}
+
+.submit-button{
+	position: relative;
+	display: inline-block;
+	left: 38%;
+	transition-property: background-color;
+	transition-timing-function: ease-in;
+}
+
+.submit-button:hover,
+form:valid .submit-button {
+	animation: button;
+	animation-duration: 2s;
+	background-color: var(--hover);
+	color: var(--accent);
 }
