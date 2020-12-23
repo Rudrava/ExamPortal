@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prod" : "node app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
