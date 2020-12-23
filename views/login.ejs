@@ -1,0 +1,24 @@
+<% const users = [
+    {
+        "illustrationLink":"/images/teacher.webp",
+        "userType":"Teacher",
+        "link": "/teacher"
+    },    
+    {
+        "illustrationLink":"/images/admin.webp",
+        "userType":"Admin",
+        "link": "/admin"
+    },
+    {
+        "illustrationLink":"/images/student.webp",
+        "userType":"Student",
+        "link": "/student"
+    },
+] %> 
+
+<div class="loginContainer">
+    <% users.forEach(user => { %>
+            <%- include("./partials/cards/loginCards.ejs", {data: user}) %> 
+        
+    <% }); %>
+</div>
